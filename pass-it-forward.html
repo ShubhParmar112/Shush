@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pass It Forward — Shush</title>
+  <meta name="description" content="Someone sent you comfort. When you're ready, you can pass it forward.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+
+    <!-- HERO -->
+    <section class="section-lg text-center">
+      <div class="container reveal">
+        <h1 style="color:var(--color-depth); max-width:600px; margin:0 auto">Someone sent you comfort.</h1>
+        <p class="text-serif-italic" style="font-size:22px; color:var(--color-primary); margin-top:16px">When you're ready, you can pass it forward.</p>
+      </div>
+    </section>
+
+    <!-- 3 OPTIONS -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3 reveal">
+          <a href="hope-wall.html" class="pif-card">
+            <div class="pif-card-icon">✉️</div>
+            <h3>Leave a message</h3>
+            <p>Share a word of hope on The Hope Wall. Your words could comfort a stranger at 3am.</p>
+          </a>
+          <div class="pif-card" onclick="showDiscount()" style="position:relative">
+            <div class="pif-card-icon">🎁</div>
+            <h3>Send a kit to someone</h3>
+            <p>Pass comfort forward with 15% off your next kit.</p>
+            <div id="discountCode" style="display:none; margin-top:16px; padding:12px; background:rgba(212,175,55,0.1); border-radius:var(--radius-sm); font-family:var(--font-heading); font-size:20px; color:var(--color-accent); font-weight:600">
+              FORWARD15
+            </div>
+          </div>
+          <div class="pif-card" onclick="showStoryForm()">
+            <div class="pif-card-icon">💛</div>
+            <h3>Share your story</h3>
+            <p>Your experience might inspire someone starting their journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE COUNTER -->
+    <section class="section text-center">
+      <div class="container reveal">
+        <div class="pif-counter" id="counter">347</div>
+        <p class="text-muted" style="margin-top:8px">moments of comfort passed forward so far</p>
+      </div>
+    </section>
+
+    <!-- STORY FORM (hidden) -->
+    <div class="modal-overlay" id="storyModal">
+      <div class="modal">
+        <h3>Share your story</h3>
+        <p class="text-muted" style="margin-bottom:16px; font-size:14px">With your permission, it may become a Story of Care on our site.</p>
+        <form onsubmit="event.preventDefault(); document.getElementById('storyModal').classList.remove('active'); alert('Thank you for sharing your story 🤍')">
+          <div class="form-group">
+            <label>Your name (or stay anonymous)</label>
+            <input type="text" placeholder="First name or 'Anonymous'">
+          </div>
+          <div class="form-group">
+            <label>Your story</label>
+            <textarea placeholder="Tell us about your experience..." required></textarea>
+          </div>
+          <div style="display:flex; gap:12px">
+            <button type="submit" class="btn btn-primary">Share 🤍</button>
+            <button type="button" class="btn btn-secondary" onclick="document.getElementById('storyModal').classList.remove('active')">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobal('');
+
+      // Animate counter
+      const counterEl = document.getElementById('counter');
+      let count = 0;
+      const target = 347;
+      const interval = setInterval(() => {
+        count += Math.ceil(target / 60);
+        if (count >= target) { count = target; clearInterval(interval); }
+        counterEl.textContent = count;
+      }, 30);
+    });
+
+    function showDiscount() {
+      const code = document.getElementById('discountCode');
+      code.style.display = code.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showStoryForm() {
+      document.getElementById('storyModal').classList.add('active');
+    }
+  </script>
+</body>
+</html>

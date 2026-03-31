@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We're Listening — Shush</title>
+  <meta name="description" content="We're here. No question is too small. Reach out to Shush for anything — we reply with care.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+
+    <!-- HERO -->
+    <section class="section-lg text-center">
+      <div class="container reveal">
+        <h1 style="color:var(--color-depth)">We're listening.</h1>
+        <p class="text-muted" style="max-width:500px; margin:16px auto 0">No question is too small. No concern is too minor. We're here, and we reply with care.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT OPTIONS -->
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; max-width:900px; margin:0 auto">
+
+          <!-- WhatsApp + Form -->
+          <div class="reveal">
+            <a href="https://wa.me/919999999999" target="_blank" class="btn btn-primary" style="width:100%; margin-bottom:32px; font-size:16px">
+              💬 WhatsApp us
+            </a>
+            <p class="text-muted" style="text-align:center; margin-bottom:32px; font-size:14px">or send us a message below</p>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center\' style=\'padding:48px 0\'><div style=\'font-size:48px; margin-bottom:16px\'>🤍</div><h3 style=\'color:var(--color-depth)\'>Thank you</h3><p class=\'text-muted\'>We\'ll reply within a few hours, always with care.</p></div>'">
+              <div class="form-group">
+                <label>Your name</label>
+                <input type="text" placeholder="First name" required>
+              </div>
+              <div class="form-group">
+                <label>Your email</label>
+                <input type="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label>Your message</label>
+                <textarea placeholder="Whatever is on your mind..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%">Send message</button>
+            </form>
+          </div>
+
+          <!-- FAQ -->
+          <div class="reveal">
+            <h2 style="color:var(--color-depth); font-size:28px; margin-bottom:24px">You might be wondering...</h2>
+
+            <div class="accordion-item">
+              <button class="accordion-header">How long does delivery take? <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p style="padding:8px 0">We deliver within 3-5 business days across India. For urgent orders, we offer express delivery within 24 hours in select cities.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">Can I personalize a kit? <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p style="padding:8px 0">Yes! Every kit comes with the option to include a personal handwritten-style note. Just write your message during checkout and we'll print it on premium paper.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">Are the products safe for chemo patients? <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p style="padding:8px 0">Absolutely. Every product is carefully chosen to be gentle, fragrance-appropriate, and safe for sensitive skin during treatment. We avoid harsh chemicals, strong fragrances, and synthetic materials.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">Can I send it directly to the person? <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p style="padding:8px 0">Yes, that's what most people do! During checkout, just enter the recipient's address. We'll send it beautifully wrapped with your personal note inside.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">What if I don't know what to write? <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p style="padding:8px 0">That's completely normal. Visit our <a href="rituals.html" style="color:var(--color-primary)">Rituals page</a> for a guide on writing when words feel impossible. Or just say something honest — "I love you" is always enough.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">Do you have a return policy? <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p style="padding:8px 0">If anything arrives damaged, we'll replace it immediately — no questions asked. For other concerns, just message us and we'll figure it out together.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPONSE PROMISE -->
+    <section class="section text-center" style="background:rgba(196,146,138,0.04)">
+      <div class="container reveal">
+        <p class="text-serif-italic" style="font-size:22px; color:var(--color-depth)">
+          "We reply within a few hours, always with care."
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => initGlobal('contact'));</script>
+</body>
+</html>

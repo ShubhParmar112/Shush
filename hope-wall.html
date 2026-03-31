@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hope Wall — Shush</title>
+  <meta name="description" content="Words from those who understand. Anonymous messages of hope from caretakers, survivors, and loved ones.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+
+    <!-- HERO -->
+    <section class="section-lg text-center">
+      <div class="container reveal">
+        <h1 style="color:var(--color-depth)">The Hope Wall</h1>
+        <p class="text-muted" style="max-width:500px; margin:16px auto 0">Words from those who understand. Anonymous, honest, human.</p>
+      </div>
+    </section>
+
+    <!-- WALL -->
+    <section class="section">
+      <div class="container">
+        <div class="masonry" id="hopeWall">
+          <div class="hope-card reveal"><p class="hope-card-quote">Day 42. She laughed today.</p><p class="hope-card-author">— caretaker</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">The scarf in the kit made her feel beautiful again. She wore it to her appointment and held her head high.</p><p class="hope-card-author">— daughter</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">To whoever reads this at 3am — you're doing enough.</p><p class="hope-card-author">— survivor</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">I keep the lavender balm for myself. I think that's okay.</p><p class="hope-card-author">— caretaker</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">He doesn't know I cry in the car after every hospital visit. But I always walk back in smiling.</p><p class="hope-card-author">— wife</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">Three rounds of chemo and she's still the strongest person I know.</p><p class="hope-card-author">— son</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">Someone sent me a kit when I was diagnosed. I still don't know who. Whoever you are — thank you.</p><p class="hope-card-author">— survivor</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">We planted a garden together today. She can't do much but she pointed at where each flower should go.</p><p class="hope-card-author">— husband</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">I'm writing this from the hospital parking lot. Needed a moment before going back in. This wall helps.</p><p class="hope-card-author">— caretaker</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">She said "I feel normal today" and I wanted to freeze that moment forever.</p><p class="hope-card-author">— best friend</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">Kit #247 went to Jaipur today. Inside was a note that read: "I'm terrible at this, but I love you." That's not terrible at all.</p><p class="hope-card-author">— Shush team</p></div>
+          <div class="hope-card reveal"><p class="hope-card-quote">100 days since surgery. She rang the bell. We all cried.</p><p class="hope-card-author">— family</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAVE A MESSAGE -->
+    <section class="section-lg text-center" style="background:rgba(196,146,138,0.04)">
+      <div class="container reveal">
+        <h2 style="color:var(--color-depth); margin-bottom:16px">Leave a message</h2>
+        <p class="text-muted" style="margin-bottom:32px">Your words could comfort a stranger at 3am. Anonymous, always.</p>
+        <form style="max-width:500px; margin:0 auto" onsubmit="event.preventDefault(); addMessage(this)">
+          <div class="form-group">
+            <textarea placeholder="Your message of hope..." required style="width:100%; padding:14px 20px; border-radius:var(--radius-sm); border:1.5px solid rgba(107,76,90,0.15); font-family:var(--font-body); font-size:16px; min-height:100px; resize:vertical"></textarea>
+          </div>
+          <div class="form-group">
+            <select style="width:100%; padding:14px 20px; border-radius:var(--radius-sm); border:1.5px solid rgba(107,76,90,0.15); font-family:var(--font-body); font-size:16px; background:var(--color-card-bg); color:var(--color-text)">
+              <option>I am a caretaker</option>
+              <option>I am going through treatment</option>
+              <option>I am a survivor</option>
+              <option>I love someone going through this</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Share your words 🤍</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating message button -->
+  <button onclick="document.querySelector('form').scrollIntoView({behavior:'smooth'})" style="position:fixed; bottom:80px; right:24px; z-index:800; width:56px; height:56px; border-radius:50%; background:var(--color-primary); color:#fff; border:none; font-size:24px; cursor:pointer; box-shadow:0 4px 20px rgba(196,146,138,0.4); transition:transform 0.3s ease" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">✉</button>
+
+  <script src="js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => initGlobal('hope'));
+
+    function addMessage(form) {
+      const text = form.querySelector('textarea').value;
+      const role = form.querySelector('select').value.replace('I am a ', '').replace('I am ', '').replace('I love someone going through this', 'loved one');
+      const wall = document.getElementById('hopeWall');
+      const card = document.createElement('div');
+      card.className = 'hope-card';
+      card.style.animation = 'pageIn 0.5s ease-out';
+      card.innerHTML = `<p class="hope-card-quote">${text}</p><p class="hope-card-author">— ${role}</p>`;
+      wall.prepend(card);
+      form.querySelector('textarea').value = '';
+      wall.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

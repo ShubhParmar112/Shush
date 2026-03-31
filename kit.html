@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gentle Embrace Kit — Shush</title>
+  <meta name="description" content="A warm hug in a box. Explore what's inside The Gentle Embrace Kit and send comfort to someone you love.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .kit-hero { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+    .unbox-container { position:relative; min-height:500px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:var(--radius-md); background: linear-gradient(135deg, rgba(212,175,55,0.05), rgba(196,146,138,0.08)); }
+    .unbox-lid { transition: transform 0.8s ease, opacity 0.6s ease; transform-origin: top center; }
+    .unbox-items { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
+    .unbox-item { opacity:0; transform:translateY(30px); transition: all 0.6s ease; background:var(--color-card-bg); padding:16px; border-radius:var(--radius-sm); text-align:center; box-shadow:0 2px 12px var(--color-card-shadow); width:calc(50% - 8px); }
+    .unbox-item.visible { opacity:1; transform:translateY(0); }
+    .item-icon { font-size:36px; margin-bottom:8px; }
+    .item-name { font-family:var(--font-heading); font-size:16px; font-weight:500; color:var(--color-depth); }
+    .item-purpose { font-size:13px; color:var(--color-text-muted); margin-top:4px; }
+    .kit-info h1 { color:var(--color-depth); font-size:40px; margin-bottom:8px; }
+    .kit-tagline { font-family:var(--font-heading); font-style:italic; font-size:20px; color:var(--color-primary); margin-bottom:24px; }
+    .gift-note-toggle { cursor:pointer; color:var(--color-primary); font-size:14px; font-weight:500; background:none; border:none; font-family:var(--font-body); margin-top:16px; }
+    .gift-note { display:none; margin-top:16px; }
+    .gift-note.open { display:block; }
+    @media (max-width:767px) { .kit-hero { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+
+    <!-- KIT HERO -->
+    <section class="section-lg">
+      <div class="container">
+        <div class="kit-hero">
+          <!-- Unboxing Animation -->
+          <div class="unbox-container" id="unboxArea">
+            <div style="text-align:center">
+              <div class="unbox-lid" id="unboxLid" style="font-size:100px; margin-bottom:16px">🎁</div>
+              <p class="text-muted" style="font-size:14px" id="unboxHint">Scroll down to unbox</p>
+              <div class="unbox-items" id="unboxItems" style="display:none; margin-top:24px">
+                <div class="unbox-item" data-delay="0">
+                  <div class="item-icon">🧣</div>
+                  <div class="item-name">Bamboo Silk Scarf</div>
+                  <div class="item-purpose">Soft on sensitive skin</div>
+                </div>
+                <div class="unbox-item" data-delay="200">
+                  <div class="item-icon">🕯️</div>
+                  <div class="item-name">Lavender Candle</div>
+                  <div class="item-purpose">For quiet moments</div>
+                </div>
+                <div class="unbox-item" data-delay="400">
+                  <div class="item-icon">🧴</div>
+                  <div class="item-name">Comfort Balm</div>
+                  <div class="item-purpose">Because sleep is hard right now</div>
+                </div>
+                <div class="unbox-item" data-delay="600">
+                  <div class="item-icon">📖</div>
+                  <div class="item-name">Comfort Journal</div>
+                  <div class="item-purpose">A safe space for feelings</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kit Info -->
+          <div class="kit-info">
+            <h1>The Gentle Embrace Kit</h1>
+            <p class="kit-tagline">"A warm embrace, boxed."</p>
+            <p style="margin-bottom:24px">For someone who needs to know they're held — even from a distance. Every item in this kit was chosen to bring a moment of peace.</p>
+            <div class="product-card-price" style="font-size:28px; margin-bottom:24px">₹3,499</div>
+            <button class="btn btn-primary" style="width:100%; max-width:300px">Send comfort 🤍</button>
+            <button class="gift-note-toggle" onclick="document.querySelector('.gift-note').classList.toggle('open')">✉️ Include a note</button>
+            <div class="gift-note">
+              <textarea class="form-group" style="width:100%; padding:14px 20px; border-radius:var(--radius-sm); border:1.5px solid rgba(107,76,90,0.15); font-family:var(--font-body); font-size:15px; min-height:100px; resize:vertical" placeholder="You don't need the perfect words. Just say what's in your heart."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESSIVE DISCLOSURE -->
+    <section class="section">
+      <div class="container" style="max-width:800px">
+        <div class="accordion-item open">
+          <button class="accordion-header">What's inside <span class="accordion-icon">+</span></button>
+          <div class="accordion-body">
+            <div style="display:flex; gap:16px; align-items:center; padding:12px 0; border-bottom:1px solid rgba(107,76,90,0.06)">
+              <span style="font-size:28px">🧣</span>
+              <div><strong>Bamboo Silk Scarf</strong> — Ultra-soft on chemo-sensitive skin. Breathable, gentle, beautiful.</div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:center; padding:12px 0; border-bottom:1px solid rgba(107,76,90,0.06)">
+              <span style="font-size:28px">🕯️</span>
+              <div><strong>Lavender Comfort Candle</strong> — Hand-poured, soy-based. For quiet moments of peace.</div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:center; padding:12px 0; border-bottom:1px solid rgba(107,76,90,0.06)">
+              <span style="font-size:28px">🧴</span>
+              <div><strong>Lavender Comfort Balm</strong> — Because sleep is hard right now. Gentle on tired muscles.</div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:center; padding:12px 0">
+              <span style="font-size:28px">📖</span>
+              <div><strong>Comfort Journal</strong> — A safe space for feelings. Guided prompts, soft pages.</div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Materials & sourcing <span class="accordion-icon">+</span></button>
+          <div class="accordion-body">
+            <p style="padding:8px 0">All materials are ethically sourced from Indian artisans. Packaging is 100% recycled and biodegradable. The scarf is made from OEKO-TEX certified bamboo silk. Candles are hand-poured using natural soy wax and essential oils — no synthetic fragrances.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">Stories of care <span class="accordion-icon">+</span></button>
+          <div class="accordion-body">
+            <div class="hope-card" style="margin:8px 0">
+              <p class="hope-card-quote">My mother wore the scarf every single day of her treatment. It became her comfort blanket.</p>
+              <p class="hope-card-author">— Ananya, Bangalore</p>
+            </div>
+            <div class="hope-card" style="margin:8px 0">
+              <p class="hope-card-quote">I sent this to my best friend. She said it was the first time she cried happy tears in months.</p>
+              <p class="hope-card-author">— Ravi, Delhi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED KITS -->
+    <section class="section" style="background:rgba(196,146,138,0.04)">
+      <div class="container">
+        <h2 class="text-center reveal" style="color:var(--color-depth); margin-bottom:32px">You might also like</h2>
+        <div class="grid grid-3 reveal">
+          <a href="kit.html" class="product-card">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="The Quiet Comfort Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Quiet Comfort Kit</div>
+              <div class="product-card-tagline">For days that need extra softness.</div>
+              <div class="product-card-price">₹2,499</div>
+            </div>
+          </a>
+          <a href="kit.html" class="product-card">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="The Restful Nights Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Restful Nights Kit</div>
+              <div class="product-card-tagline">Because sleep is hard right now.</div>
+              <div class="product-card-price">₹3,299</div>
+            </div>
+          </a>
+          <a href="kit.html" class="product-card">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&q=80" alt="The Strength & Grace Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Strength & Grace Kit</div>
+              <div class="product-card-tagline">Celebrating courage beautifully.</div>
+              <div class="product-card-price">₹4,999</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobal('kits');
+
+      // Unboxing animation on scroll
+      let unboxed = false;
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !unboxed) {
+          unboxed = true;
+          const lid = document.getElementById('unboxLid');
+          const hint = document.getElementById('unboxHint');
+          const items = document.getElementById('unboxItems');
+
+          // Lid opens
+          lid.style.transform = 'rotateX(90deg) scale(0.5)';
+          lid.style.opacity = '0.3';
+          hint.style.display = 'none';
+
+          // Items appear
+          setTimeout(() => {
+            items.style.display = 'flex';
+            items.querySelectorAll('.unbox-item').forEach((item, i) => {
+              setTimeout(() => item.classList.add('visible'), parseInt(item.dataset.delay));
+            });
+          }, 600);
+        }
+      }, { threshold: 0.3 });
+
+      observer.observe(document.getElementById('unboxArea'));
+    });
+  </script>
+</body>
+</html>

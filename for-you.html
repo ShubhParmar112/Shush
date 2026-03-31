@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Note For You — Shush</title>
+  <meta name="description" content="Before you do anything else — this is for you. A message for every caretaker who is doing more than they know.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .caretaker-letter { max-width:600px; margin:0 auto; font-size:19px; line-height:1.9; }
+    .caretaker-letter p { margin-bottom:24px; }
+    .caretaker-breath { width:100px; height:100px; border-radius:50%; background:radial-gradient(circle,var(--color-primary),rgba(196,146,138,0.2)); animation:breathe 4s ease-in-out infinite; margin:48px auto; box-shadow:0 0 40px rgba(196,146,138,0.2); }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+
+    <!-- HERO -->
+    <section class="section-lg text-center" style="background:linear-gradient(to bottom, rgba(196,146,138,0.06), var(--color-base))">
+      <div class="container reveal">
+        <h1 style="color:var(--color-depth); font-size:48px; max-width:600px; margin:0 auto">Before you do anything else — this is for you.</h1>
+      </div>
+    </section>
+
+    <!-- THE LETTER -->
+    <section class="section">
+      <div class="container">
+        <div class="caretaker-letter reveal">
+          <p>You searched for ways to help someone you love. That search brought you here.</p>
+          <p>We want you to know something before you go any further:</p>
+          <p style="font-family:var(--font-heading); font-size:26px; color:var(--color-depth); font-weight:500; text-align:center">
+            Taking care of someone is exhausting, and you are allowed to feel tired.
+          </p>
+          <p>You are allowed to not have the right words. You are allowed to cry in the shower. You are allowed to feel angry that this is happening.</p>
+          <p>You are doing more than you know. The fact that you're here, looking for a way to bring comfort — that already says everything.</p>
+          <p style="font-family:var(--font-heading); font-style:italic; color:var(--color-primary); font-size:22px; text-align:center">
+            You matter too.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BREATHING MOMENT -->
+    <section class="section text-center">
+      <div class="container reveal">
+        <div class="caretaker-breath"></div>
+        <p style="font-family:var(--font-heading); font-size:20px; color:var(--color-depth)">Take a moment with us.</p>
+      </div>
+    </section>
+
+    <!-- SELF-CARE TIPS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center reveal" style="color:var(--color-depth); margin-bottom:48px">Small reminders</h2>
+        <div class="grid grid-3 reveal">
+          <div class="card" style="padding:var(--space-md); text-align:center">
+            <div style="font-size:40px; margin-bottom:16px">😌</div>
+            <h3 style="font-size:20px; color:var(--color-depth); margin-bottom:8px">Rest without guilt</h3>
+            <p class="text-muted" style="font-size:15px">You can't pour from an empty cup. Taking a break is not abandoning them.</p>
+          </div>
+          <div class="card" style="padding:var(--space-md); text-align:center">
+            <div style="font-size:40px; margin-bottom:16px">🤝</div>
+            <h3 style="font-size:20px; color:var(--color-depth); margin-bottom:8px">Ask for help</h3>
+            <p class="text-muted" style="font-size:15px">You don't have to carry this alone. Let people in — even for the small things.</p>
+          </div>
+          <div class="card" style="padding:var(--space-md); text-align:center">
+            <div style="font-size:40px; margin-bottom:16px">🤍</div>
+            <h3 style="font-size:20px; color:var(--color-depth); margin-bottom:8px">You deserve comfort too</h3>
+            <p class="text-muted" style="font-size:15px">It's okay to do something for yourself. Your feelings are valid.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOPE WALL LINK -->
+    <section class="section-lg text-center" style="background:rgba(168,181,160,0.06)">
+      <div class="container reveal">
+        <p style="font-family:var(--font-heading); font-style:italic; font-size:22px; color:var(--color-depth); margin-bottom:24px">
+          "Others have walked this path. Their words might help."
+        </p>
+        <a href="hope-wall.html" class="btn btn-secondary">Visit The Hope Wall</a>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => initGlobal(''));</script>
+</body>
+</html>

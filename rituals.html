@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Rituals of Care — Shush</title>
+  <meta name="description" content="Gentle acts that say 'I'm here.' Simple rituals of care for someone going through cancer treatment.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .ritual-detail { display:none; max-width:800px; margin:0 auto; }
+    .ritual-detail.active { display:block; animation: pageIn 0.5s ease-out; }
+    .ritual-steps { counter-reset:step; }
+    .ritual-step { display:flex; gap:20px; padding:20px 0; border-bottom:1px solid rgba(107,76,90,0.06); }
+    .ritual-step-num { width:40px; height:40px; border-radius:50%; background:rgba(212,175,55,0.12); color:var(--color-accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-weight:600; font-size:18px; flex-shrink:0; }
+    .ritual-sidebar { position:sticky; top:100px; }
+    .back-to-grid { cursor:pointer; color:var(--color-primary); font-weight:500; font-size:15px; margin-bottom:24px; background:none; border:none; font-family:var(--font-body); }
+    .back-to-grid:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+
+    <!-- HERO -->
+    <section class="hero" style="min-height:50vh">
+      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=1440&q=80')"></div>
+      <div class="hero-content">
+        <h1>Small Rituals of Care</h1>
+        <p style="color:#fff; font-size:18px; opacity:0.9">Gentle acts that say "I'm here."</p>
+      </div>
+    </section>
+
+    <!-- RITUAL GRID -->
+    <section class="section-lg" id="ritualGrid">
+      <div class="container">
+        <div class="grid grid-3 reveal">
+          <div class="ritual-card" onclick="showRitual('massage')">
+            <div class="ritual-card-icon">🤲</div>
+            <h3>A 5-minute hand massage</h3>
+            <span class="tag">2 min read</span>
+            <p class="product-link">Related: Comfort Balm</p>
+          </div>
+          <div class="ritual-card" onclick="showRitual('chai')">
+            <div class="ritual-card-icon">☕</div>
+            <h3>Making chai as love</h3>
+            <span class="tag">2 min read</span>
+            <p class="product-link">Related: The Warmth Kit</p>
+          </div>
+          <div class="ritual-card" onclick="showRitual('room')">
+            <div class="ritual-card-icon">🕯️</div>
+            <h3>A room that feels like a sanctuary</h3>
+            <span class="tag">3 min read</span>
+            <p class="product-link">Related: Lavender Candle</p>
+          </div>
+          <div class="ritual-card" onclick="showRitual('silence')">
+            <div class="ritual-card-icon">🤝</div>
+            <h3>The art of sitting together</h3>
+            <span class="tag">2 min read</span>
+            <p class="product-link">Related: Gentle Embrace Kit</p>
+          </div>
+          <div class="ritual-card" onclick="showRitual('writing')">
+            <div class="ritual-card-icon">✍️</div>
+            <h3>Writing when words fail</h3>
+            <span class="tag">3 min read</span>
+            <p class="product-link">Related: Comfort Journal</p>
+          </div>
+          <div class="ritual-card" onclick="showRitual('flowers')">
+            <div class="ritual-card-icon">🌸</div>
+            <h3>Flowers that speak</h3>
+            <span class="tag">2 min read</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RITUAL DETAIL VIEW -->
+    <section class="section-lg" id="ritualDetail">
+      <!-- Hand Massage -->
+      <div class="ritual-detail" id="ritual-massage">
+        <div class="container">
+          <button class="back-to-grid" onclick="hideRitual()">← Back to all rituals</button>
+          <div style="display:grid; grid-template-columns:2fr 1fr; gap:48px; align-items:start">
+            <div>
+              <h2 style="color:var(--color-depth); margin-bottom:24px">A 5-minute hand massage for your loved one</h2>
+              <p style="margin-bottom:32px">Touch is one of the most powerful things you can offer. You don't need to be a professional — just be present, be gentle, and let your hands say what words can't.</p>
+              <div class="ritual-steps">
+                <div class="ritual-step"><div class="ritual-step-num">1</div><div><strong>Warm your hands.</strong> Rub them together or hold them under warm water. Cold hands can feel jarring on sensitive skin.</div></div>
+                <div class="ritual-step"><div class="ritual-step-num">2</div><div><strong>Apply a small amount of balm.</strong> Lavender or chamomile works beautifully. Ask if the scent feels okay — chemo can make senses heightened.</div></div>
+                <div class="ritual-step"><div class="ritual-step-num">3</div><div><strong>Start with the palm.</strong> Use your thumbs to make gentle circles in the center of their palm. Don't rush. Match your breathing to theirs.</div></div>
+                <div class="ritual-step"><div class="ritual-step-num">4</div><div><strong>Move to each finger.</strong> Gently roll and pull each finger. This is where tension hides. If they wince, lighten your touch.</div></div>
+                <div class="ritual-step"><div class="ritual-step-num">5</div><div><strong>Finish with stillness.</strong> Hold their hand in both of yours for a moment. No words needed. Just presence.</div></div>
+              </div>
+            </div>
+            <div class="ritual-sidebar">
+              <div class="card" style="padding:var(--space-md); text-align:center">
+                <div style="font-size:48px; margin-bottom:16px">🧴</div>
+                <h3 style="font-size:18px; color:var(--color-depth); margin-bottom:8px">Lavender Comfort Balm</h3>
+                <p class="text-muted" style="font-size:14px; margin-bottom:16px">Because sleep is hard right now.</p>
+                <div style="font-weight:600; margin-bottom:16px">₹899</div>
+                <a href="kit.html" class="btn btn-primary btn-sm" style="width:100%">Add to care package</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chai -->
+      <div class="ritual-detail" id="ritual-chai">
+        <div class="container">
+          <button class="back-to-grid" onclick="hideRitual()">← Back to all rituals</button>
+          <div style="max-width:700px">
+            <h2 style="color:var(--color-depth); margin-bottom:24px">Making chai as an act of love</h2>
+            <p style="margin-bottom:32px">In India, chai is never just a drink. It's how we say "I'm thinking of you." Making it slowly, with intention, turns a daily ritual into a sacred one.</p>
+            <div class="ritual-steps">
+              <div class="ritual-step"><div class="ritual-step-num">1</div><div><strong>Slow down.</strong> Don't rush. The point isn't efficiency — it's presence. Let the water come to a gentle boil.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">2</div><div><strong>Ask how they like it.</strong> Tastes change during treatment. More ginger? Less sugar? This question shows you're paying attention.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">3</div><div><strong>Use a cup that matters.</strong> Not a random mug — their favourite one. Or one that's beautiful enough to notice.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">4</div><div><strong>Sit with them while they drink.</strong> Don't just deliver and leave. The chai is an excuse to be close.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room -->
+      <div class="ritual-detail" id="ritual-room">
+        <div class="container">
+          <button class="back-to-grid" onclick="hideRitual()">← Back to all rituals</button>
+          <div style="max-width:700px">
+            <h2 style="color:var(--color-depth); margin-bottom:24px">A room that feels like a sanctuary</h2>
+            <p style="margin-bottom:32px">When someone is spending most of their time in one room, that room becomes their world. Making it feel safe and beautiful is one of the kindest things you can do.</p>
+            <div class="ritual-steps">
+              <div class="ritual-step"><div class="ritual-step-num">1</div><div><strong>Soft lighting.</strong> Swap harsh overhead lights for warm lamps or candles. Light changes how a space feels.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">2</div><div><strong>Fresh air.</strong> Open a window for 10 minutes if weather allows. Fresh air is medicine.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">3</div><div><strong>Remove clutter gently.</strong> A tidy space reduces anxiety. But don't move their things without asking.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">4</div><div><strong>Add one beautiful thing.</strong> A small plant, a framed photo, a vase with a single flower. Beauty is healing.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Silence -->
+      <div class="ritual-detail" id="ritual-silence">
+        <div class="container">
+          <button class="back-to-grid" onclick="hideRitual()">← Back to all rituals</button>
+          <div style="max-width:700px">
+            <h2 style="color:var(--color-depth); margin-bottom:24px">The art of sitting together without talking</h2>
+            <p style="margin-bottom:32px">Sometimes the most powerful thing you can do is just be there. No advice. No cheerfulness. Just presence.</p>
+            <div class="ritual-steps">
+              <div class="ritual-step"><div class="ritual-step-num">1</div><div><strong>Arrive without an agenda.</strong> Don't come to "cheer them up." Come to be with them, however they are.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">2</div><div><strong>Sit close but don't crowd.</strong> Same room, comfortable distance. Maybe hold their hand if they want.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">3</div><div><strong>Let silence be.</strong> Don't fill it with chatter. Silence between people who love each other isn't awkward — it's intimate.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">4</div><div><strong>Leave gently.</strong> "I'll be back" is enough. No big goodbye needed.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Writing -->
+      <div class="ritual-detail" id="ritual-writing">
+        <div class="container">
+          <button class="back-to-grid" onclick="hideRitual()">← Back to all rituals</button>
+          <div style="max-width:700px">
+            <h2 style="color:var(--color-depth); margin-bottom:24px">Writing a note when words feel impossible</h2>
+            <p style="margin-bottom:32px">You don't need the perfect words. You just need honest ones. Here's how to write a note when you don't know what to say.</p>
+            <div class="ritual-steps">
+              <div class="ritual-step"><div class="ritual-step-num">1</div><div><strong>Start with their name.</strong> Not "Dear" — just their name. It's more personal.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">2</div><div><strong>Say one true thing.</strong> "I think about you every day." "I'm terrible at this but I love you." "I wish I could do more."</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">3</div><div><strong>Don't give advice.</strong> No "stay strong" or "think positive." Just love.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">4</div><div><strong>Sign with warmth.</strong> "With all my love" or "Always here" or just a heart.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flowers -->
+      <div class="ritual-detail" id="ritual-flowers">
+        <div class="container">
+          <button class="back-to-grid" onclick="hideRitual()">← Back to all rituals</button>
+          <div style="max-width:700px">
+            <h2 style="color:var(--color-depth); margin-bottom:24px">Flowers that speak</h2>
+            <p style="margin-bottom:32px">A single stem in a vase by their bedside can change the entire energy of a room. Flowers don't need words — they just need to be there.</p>
+            <div class="ritual-steps">
+              <div class="ritual-step"><div class="ritual-step-num">1</div><div><strong>Choose mild fragrances.</strong> During treatment, strong scents can be overwhelming. Soft roses, daisies, or orchids are safer choices.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">2</div><div><strong>One stem is enough.</strong> You don't need a bouquet. A single flower in a simple vase is more beautiful than an arrangement.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">3</div><div><strong>Place it where they can see it.</strong> By the bedside, near the window — wherever their eyes rest most.</div></div>
+              <div class="ritual-step"><div class="ritual-step-num">4</div><div><strong>Replace it before it wilts.</strong> A dying flower can feel symbolic. Keep it fresh.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => initGlobal('rituals'));
+
+    function showRitual(id) {
+      document.getElementById('ritualGrid').style.display = 'none';
+      document.querySelectorAll('.ritual-detail').forEach(d => d.classList.remove('active'));
+      document.getElementById('ritual-' + id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function hideRitual() {
+      document.querySelectorAll('.ritual-detail').forEach(d => d.classList.remove('active'));
+      document.getElementById('ritualGrid').style.display = '';
+      window.scrollTo({ top: 300, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

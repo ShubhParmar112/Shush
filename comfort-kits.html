@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comfort Kits — Shush</title>
+  <meta name="description" content="Browse Shush comfort kits for cancer patients. Every kit is packed with intention, love, and warmth.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+    <p class="time-greeting" id="timeGreeting"></p>
+
+    <!-- HERO -->
+    <section class="section-lg text-center">
+      <div class="container reveal">
+        <h1 style="color:var(--color-depth)">I want to send comfort</h1>
+        <p class="text-muted" style="max-width:500px; margin:16px auto 0">Every kit is packed with intention. Choose the one that feels right for their journey.</p>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+    <section style="padding:0 0 32px">
+      <div class="container">
+        <div class="flex-center" style="gap:12px; flex-wrap:wrap" id="filters">
+          <button class="btn btn-sm btn-primary filter-btn" data-filter="all">All kits</button>
+          <button class="btn btn-sm btn-secondary filter-btn" data-filter="diagnosed">Just diagnosed</button>
+          <button class="btn btn-sm btn-secondary filter-btn" data-filter="treatment">During treatment</button>
+          <button class="btn btn-sm btn-secondary filter-btn" data-filter="recovery">Recovery</button>
+          <button class="btn btn-sm btn-secondary filter-btn" data-filter="strength">Celebrating strength</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3" id="productGrid">
+          <!-- Kit 1 -->
+          <a href="kit.html" class="product-card" data-stage="diagnosed treatment">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" alt="The Gentle Embrace Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Gentle Embrace Kit</div>
+              <div class="product-card-tagline">A warm hug in a box.</div>
+              <div class="product-card-price">₹3,499</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <!-- Kit 2 -->
+          <a href="kit.html" class="product-card" data-stage="treatment">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="The Quiet Comfort Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Quiet Comfort Kit</div>
+              <div class="product-card-tagline">For days that need extra softness.</div>
+              <div class="product-card-price">₹2,499</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <!-- Kit 3 -->
+          <a href="kit.html" class="product-card" data-stage="strength recovery">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&q=80" alt="The Strength & Grace Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Strength & Grace Kit</div>
+              <div class="product-card-tagline">Celebrating courage beautifully.</div>
+              <div class="product-card-price">₹4,999</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <!-- Kit 4 -->
+          <a href="kit.html" class="product-card" data-stage="diagnosed">
+            <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80" alt="The First Light Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The First Light Kit</div>
+              <div class="product-card-tagline">For the very beginning of the journey.</div>
+              <div class="product-card-price">₹2,199</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <!-- Kit 5 -->
+          <a href="kit.html" class="product-card" data-stage="treatment recovery">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="The Restful Nights Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Restful Nights Kit</div>
+              <div class="product-card-tagline">Because sleep is hard right now.</div>
+              <div class="product-card-price">₹3,299</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <!-- Kit 6 -->
+          <a href="kit.html" class="product-card" data-stage="strength">
+            <img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?w=600&q=80" alt="The Radiance Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Radiance Kit</div>
+              <div class="product-card-tagline">For the one who lights up every room.</div>
+              <div class="product-card-price">₹4,499</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="section" style="background:rgba(196,146,138,0.04)">
+      <div class="container text-center reveal">
+        <div class="hope-card" style="max-width:600px; margin:0 auto; border-left:none; text-align:center">
+          <p class="hope-card-quote" style="font-size:22px">"I didn't know what to send. This kit said everything I couldn't."</p>
+          <p class="hope-card-author">— Meera, Mumbai</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initGlobal('kits');
+
+      // Filter logic
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-secondary');
+          });
+          btn.classList.remove('btn-secondary');
+          btn.classList.add('btn-primary');
+
+          const filter = btn.dataset.filter;
+          document.querySelectorAll('#productGrid .product-card').forEach(card => {
+            if (filter === 'all' || card.dataset.stage.includes(filter)) {
+              card.style.display = '';
+              card.style.animation = 'pageIn 0.4s ease-out';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

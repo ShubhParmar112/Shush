@@ -7,22 +7,109 @@
 // ========== SHARED COMPONENTS ==========
 
 function createNavbar(activePage) {
+  // Determine which top-level category is active
+  const shopPages = ['kits', 'men', 'women', 'accessories', 'new-arrivals'];
+  const hopePages = ['hope', 'rituals', 'mental-health', 'contact'];
+  const sendPages = ['consult-doctor', 'articles'];
+
+  const isShopActive = shopPages.includes(activePage);
+  const isStoryActive = activePage === 'story';
+  const isHopeActive = hopePages.includes(activePage);
+  const isSendActive = sendPages.includes(activePage);
+
   const nav = document.createElement('nav');
   nav.className = 'navbar';
   nav.innerHTML = `
-    <div class="container flex-between">
-      <a href="index.html" class="nav-logo">Shush</a>
-      <div class="nav-links">
-        <a href="comfort-kits.html" class="${activePage === 'kits' ? 'active' : ''}">I want to send comfort</a>
-        <a href="our-story.html" class="${activePage === 'story' ? 'active' : ''}">The Shush Story</a>
-        <a href="rituals.html" class="${activePage === 'rituals' ? 'active' : ''}">Small rituals of care</a>
-        <a href="hope-wall.html" class="${activePage === 'hope' ? 'active' : ''}">The Hope Wall</a>
-        <a href="contact.html" class="${activePage === 'contact' ? 'active' : ''}">We're listening</a>
-        <a href="comfort-kits.html" class="btn btn-primary btn-sm">Send Comfort 🤍</a>
+    <div class="navbar-top">
+      <div class="container flex-between">
+        <a href="index.html" class="nav-logo">Shushco</a>
+        <div class="nav-search">
+          <input type="text" class="nav-search-input" placeholder="Search" id="navSearchInput">
+          <button class="nav-search-btn" aria-label="Search" onclick="document.getElementById('navSearchInput').focus()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+        <div class="nav-actions">
+          <div class="nav-action-wrapper">
+            <a href="#" class="nav-action" aria-label="Sign In" onclick="event.preventDefault()">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span class="nav-action-label">Sign In</span>
+            </a>
+            <div class="nav-action-dropdown">
+              <h4 class="nav-action-dropdown-title">Welcome</h4>
+              <a href="#" class="nav-action-dropdown-link" onclick="event.preventDefault()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Sign in / Create an account
+              </a>
+              <a href="#" class="nav-action-dropdown-link" onclick="event.preventDefault()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+                Guest order tracking
+              </a>
+              <a href="contact.html" class="nav-action-dropdown-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Need help?
+              </a>
+            </div>
+          </div>
+          <a href="#" class="nav-action" aria-label="Saved" onclick="event.preventDefault()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="nav-action-label">Saved</span>
+          </a>
+          <a href="#" class="nav-action" aria-label="Cart" onclick="event.preventDefault()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="nav-action-label">Cart</span>
+          </a>
+        </div>
+        <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+    </div>
+    <div class="navbar-menu">
+      <div class="container">
+        <ul class="nav-items">
+          <li class="nav-item has-dropdown ${isShopActive ? 'active' : ''}">
+            <a href="comfort-kits.html" class="nav-item-link">Shop All</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-inner">
+                <div class="nav-dropdown-column">
+                  <a href="men.html" class="nav-dropdown-link ${activePage === 'men' ? 'active' : ''}">Men</a>
+                  <a href="women.html" class="nav-dropdown-link ${activePage === 'women' ? 'active' : ''}">Women</a>
+                  <a href="accessories.html" class="nav-dropdown-link ${activePage === 'accessories' ? 'active' : ''}">Accessories</a>
+                  <a href="comfort-kits.html" class="nav-dropdown-link ${activePage === 'kits' ? 'active' : ''}">Kits</a>
+                  <a href="new-arrivals.html" class="nav-dropdown-link ${activePage === 'new-arrivals' ? 'active' : ''}">New Arrivals</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item ${isStoryActive ? 'active' : ''}">
+            <a href="our-story.html" class="nav-item-link">The Shush Story</a>
+          </li>
+          <li class="nav-item has-dropdown ${isHopeActive ? 'active' : ''}">
+            <a href="hope-wall.html" class="nav-item-link">The Hope Wall</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-inner">
+                <div class="nav-dropdown-column">
+                  <a href="rituals.html" class="nav-dropdown-link ${activePage === 'rituals' ? 'active' : ''}">The Small Rituals of Care</a>
+                  <a href="mental-health.html" class="nav-dropdown-link ${activePage === 'mental-health' ? 'active' : ''}">Mental Health</a>
+                  <a href="contact.html" class="nav-dropdown-link ${activePage === 'contact' ? 'active' : ''}">We Are Listening</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item has-dropdown ${isSendActive ? 'active' : ''}">
+            <a href="comfort-kits.html" class="nav-item-link">Send Comfort</a>
+            <div class="nav-dropdown">
+              <div class="nav-dropdown-inner">
+                <div class="nav-dropdown-column">
+                  <a href="consult-doctor.html" class="nav-dropdown-link ${activePage === 'consult-doctor' ? 'active' : ''}">Consult Your Doctor</a>
+                  <a href="articles.html" class="nav-dropdown-link ${activePage === 'articles' ? 'active' : ''}">Articles</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   `;
   document.body.prepend(nav);
@@ -34,15 +121,42 @@ function createNavbar(activePage) {
   overlay.innerHTML = `
     <button class="nav-mobile-close" onclick="toggleMobileNav()">×</button>
     <a href="index.html">Home</a>
-    <a href="comfort-kits.html">I want to send comfort</a>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-toggle" onclick="toggleMobileGroup(this)">Shop All <span class="mobile-nav-arrow">+</span></button>
+      <div class="mobile-nav-sub">
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="comfort-kits.html">Kits</a>
+        <a href="new-arrivals.html">New Arrivals</a>
+      </div>
+    </div>
     <a href="our-story.html">The Shush Story</a>
-    <a href="rituals.html">Small rituals of care</a>
-    <a href="hope-wall.html">The Hope Wall</a>
-    <a href="for-you.html">A note for you</a>
-    <a href="contact.html">We're listening</a>
-    <a href="comfort-kits.html" class="btn btn-primary" style="margin-top:16px">Send Comfort 🤍</a>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-toggle" onclick="toggleMobileGroup(this)">The Hope Wall <span class="mobile-nav-arrow">+</span></button>
+      <div class="mobile-nav-sub">
+        <a href="rituals.html">The Small Rituals of Care</a>
+        <a href="mental-health.html">Mental Health</a>
+        <a href="contact.html">We Are Listening</a>
+      </div>
+    </div>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-toggle" onclick="toggleMobileGroup(this)">Send Comfort <span class="mobile-nav-arrow">+</span></button>
+      <div class="mobile-nav-sub">
+        <a href="consult-doctor.html">Consult Your Doctor</a>
+        <a href="articles.html">Articles</a>
+      </div>
+    </div>
+    <a href="for-you.html">A Note For You</a>
   `;
   document.body.prepend(overlay);
+}
+
+function toggleMobileGroup(btn) {
+  const group = btn.closest('.mobile-nav-group');
+  group.classList.toggle('open');
+  const arrow = btn.querySelector('.mobile-nav-arrow');
+  arrow.textContent = group.classList.contains('open') ? '−' : '+';
 }
 
 function toggleMobileNav() {
@@ -56,11 +170,19 @@ function createFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="nav-logo">Shush</div>
+          <div class="nav-logo">Shushco</div>
           <p class="footer-tagline">"Because care speaks softly."</p>
           <div class="footer-social">
             <a href="#" aria-label="Instagram">📷</a>
             <a href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="mailto:shushco.in05@gmail.com">shushco.in05@gmail.com</a>
+            <a href="tel:+919136233913">Mob: +91 9136233913</a>
+            <a href="contact.html">WhatsApp Us</a>
           </div>
         </div>
         <div>
@@ -78,15 +200,6 @@ function createFooter() {
             <a href="hope-wall.html">The Hope Wall</a>
             <a href="pass-it-forward.html">Pass It Forward</a>
           </div>
-        </div>
-        <div>
-          <h4>For You</h4>
-          <div class="footer-links">
-            <a href="for-you.html">A Note For You</a>
-            <a href="rituals.html">Rituals of Care</a>
-            <a href="contact.html">WhatsApp Us</a>
-          </div>
-        </div>
       </div>
       <div class="footer-bottom">
         © 2026 Shush. Made with love. 🤍
@@ -158,7 +271,6 @@ function initTimeAware() {
   let greeting = '';
 
   if (hour >= 22 || hour < 5) {
-    document.body.classList.add('time-night');
     greeting = "Can't sleep? We're here too.";
   } else if (hour >= 5 && hour < 12) {
     greeting = 'Good morning. How can we bring comfort today?';
@@ -285,6 +397,12 @@ function initAccordions() {
 // ========== GLOBAL INIT ==========
 
 function initGlobal(activePage) {
+  // Always start at the top of the page on refresh
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   createNavbar(activePage);
   createFooter();
   createSoundButton();
@@ -301,3 +419,4 @@ window.showPersonalization = showPersonalization;
 window.getPersonalizedHeroText = getPersonalizedHeroText;
 window.initScrollReveal = initScrollReveal;
 window.toggleMobileNav = toggleMobileNav;
+window.toggleMobileGroup = toggleMobileGroup;

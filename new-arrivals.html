@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Arrivals — Shush</title>
+  <meta name="description" content="Discover the newest comfort kits and accessories from Shush. Fresh additions crafted with love.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="page-content">
+    <div class="nav-spacer"></div>
+    <p class="time-greeting" id="timeGreeting"></p>
+
+    <!-- HERO -->
+    <section class="section-lg text-center">
+      <div class="container reveal">
+        <h1 style="color:var(--color-depth)">New Arrivals</h1>
+        <p class="text-muted" style="max-width:500px; margin:16px auto 0">Fresh additions to our collection. Each one crafted with the same intention and warmth.</p>
+      </div>
+    </section>
+
+    <!-- NEW BADGE STYLE -->
+    <style>
+      .new-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: var(--color-accent);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 4px 12px;
+        border-radius: var(--radius-pill);
+        z-index: 2;
+      }
+      .product-card { position: relative; }
+    </style>
+
+    <!-- PRODUCT GRID -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-3" id="productGrid">
+          <a href="kit.html" class="product-card">
+            <span class="new-badge">New</span>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80" alt="The Morning Light Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Morning Light Kit</div>
+              <div class="product-card-tagline">Start each day with a little warmth.</div>
+              <div class="product-card-price">₹2,799</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <a href="kit.html" class="product-card">
+            <span class="new-badge">New</span>
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="The Mindful Moment Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Mindful Moment Kit</div>
+              <div class="product-card-tagline">A pause in a world that won't stop.</div>
+              <div class="product-card-price">₹3,199</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+          <a href="kit.html" class="product-card">
+            <span class="new-badge">New</span>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="The Together Kit" class="product-card-img">
+            <div class="product-card-body">
+              <div class="product-card-name">The Together Kit</div>
+              <div class="product-card-tagline">One for the patient, one for the caretaker.</div>
+              <div class="product-card-price">₹5,499</div>
+              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section text-center" style="background:rgba(168,181,160,0.06)">
+      <div class="container reveal">
+        <h2 style="color:var(--color-depth); margin-bottom:16px">See all comfort kits</h2>
+        <p class="text-muted" style="margin-bottom:24px">Browse our full collection of comfort kits and accessories.</p>
+        <a href="comfort-kits.html" class="btn btn-primary">View All Kits</a>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => initGlobal('new-arrivals'));</script>
+</body>
+</html>

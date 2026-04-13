@@ -77,14 +77,14 @@ function createNavbar(activePage) {
       <div class="container">
         <ul class="nav-items">
           <li class="nav-item has-dropdown ${isShopActive ? 'active' : ''}">
-            <a href="comfort-kits.html" class="nav-item-link">Shop All</a>
+            <a href="new-arrivals.html" class="nav-item-link">Shop All</a>
             <div class="nav-dropdown">
               <div class="nav-dropdown-inner">
                 <div class="nav-dropdown-column">
                   <a href="men.html" class="nav-dropdown-link ${activePage === 'men' ? 'active' : ''}">Men</a>
                   <a href="women.html" class="nav-dropdown-link ${activePage === 'women' ? 'active' : ''}">Women</a>
                   <a href="accessories.html" class="nav-dropdown-link ${activePage === 'accessories' ? 'active' : ''}">Accessories</a>
-                  <a href="comfort-kits.html" class="nav-dropdown-link ${activePage === 'kits' ? 'active' : ''}">Kits</a>
+                  <a href="collections.html" class="nav-dropdown-link ${activePage === 'collections' ? 'active' : ''}">Collections</a>
                   <a href="new-arrivals.html" class="nav-dropdown-link ${activePage === 'new-arrivals' ? 'active' : ''}">New Arrivals</a>
                 </div>
               </div>
@@ -106,7 +106,7 @@ function createNavbar(activePage) {
             </div>
           </li>
           <li class="nav-item has-dropdown ${isSendActive ? 'active' : ''}">
-            <a href="comfort-kits.html" class="nav-item-link">Send Comfort</a>
+            <a href="collections.html" class="nav-item-link">Collections</a>
             <div class="nav-dropdown">
               <div class="nav-dropdown-inner">
                 <div class="nav-dropdown-column">
@@ -135,7 +135,7 @@ function createNavbar(activePage) {
         <a href="men.html">Men</a>
         <a href="women.html">Women</a>
         <a href="accessories.html">Accessories</a>
-        <a href="comfort-kits.html">Kits</a>
+        <a href="collections.html">Collections</a>
         <a href="new-arrivals.html">New Arrivals</a>
       </div>
     </div>
@@ -196,7 +196,7 @@ function createFooter() {
         <div>
           <h4>Explore</h4>
           <div class="footer-links">
-            <a href="comfort-kits.html">Comfort Kits</a>
+            <a href="collections.html">Clothing Collections</a>
             <a href="our-story.html">The Shush Story</a>
             <a href="rituals.html">Small Rituals of Care</a>
           </div>
@@ -208,7 +208,16 @@ function createFooter() {
             <a href="hope-wall.html">The Hope Wall</a>
             <a href="pass-it-forward.html">Pass It Forward</a>
           </div>
-      </div>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="cookies-policy.html">Cookies Policy</a>
+            <a href="refund-policy.html">Refund Policy</a>
+          </div>
+        </div>
       <div class="footer-bottom">
         © 2026 Shush. Made with love. 🤍
       </div>
@@ -366,9 +375,9 @@ function showPersonalization() {
 function getPersonalizedHeroText(persona) {
   const texts = {
     diagnosed: { h1: 'The first step is knowing someone cares.', sub: 'We help you send comfort when words aren\'t enough.' },
-    treatment: { h1: 'A little comfort can carry them through.', sub: 'Thoughtfully curated kits to bring warmth during treatment.' },
+    treatment: { h1: 'A little comfort can carry them through.', sub: 'Premium clothing designed to bring warmth during treatment.' },
     strength: { h1: 'Honour their journey with something beautiful.', sub: 'Celebrate courage with a care package made with love.' },
-    browsing: { h1: 'Because care speaks softly.', sub: 'Comfort kits for the people who matter most.' }
+    browsing: { h1: 'Because care speaks softly.', sub: 'Premium fabrics for the people who matter most.' }
   };
   return texts[persona] || texts.browsing;
 }
@@ -400,6 +409,33 @@ function initAccordions() {
       if (!wasOpen) item.classList.add('open');
     });
   });
+}
+
+// ========== NAVBAR SCROLL HIDE ==========
+function initNavbarScrollHide() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  
+  let lastScrollY = window.scrollY;
+  const scrollThreshold = 100; // Minimum scroll distance before hiding
+  
+  function handleScroll() {
+    const currentScrollY = window.scrollY;
+    const scrollingDown = currentScrollY > lastScrollY;
+    
+    if (scrollingDown && currentScrollY > scrollThreshold) {
+      // Hide navbar when scrolling down past threshold
+      navbar.classList.add('hidden');
+    } else {
+      // Show navbar when scrolling up or at top
+      navbar.classList.remove('hidden');
+    }
+    
+    lastScrollY = currentScrollY;
+  }
+  
+  // Use passive scroll listener for better performance
+  window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 // ========== HEADLINE ROTATOR ==========
@@ -447,6 +483,7 @@ function initGlobal(activePage) {
   initScrollReveal();
   initAccordions();
   initHeadlineRotator();
+  initNavbarScrollHide();
 }
 
 // Make functions globally available

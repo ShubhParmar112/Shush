@@ -12,6 +12,11 @@
   z-index: 1000;
   background: var(--color-base);
   box-shadow: 0 1px 8px rgba(107, 76, 90, 0.06);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
 }
 
 

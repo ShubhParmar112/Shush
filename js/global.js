@@ -22,12 +22,20 @@ function createNavbar(activePage) {
   nav.innerHTML = `
     <div class="navbar-top">
       <div class="container flex-between">
-        <a href="index.html" class="nav-logo">Shushco</a>
+        <a href="index.html" class="nav-logo">Shush.co</a>
         <div class="nav-search">
           <input type="text" class="nav-search-input" placeholder="Search" id="navSearchInput">
           <button class="nav-search-btn" aria-label="Search" onclick="document.getElementById('navSearchInput').focus()">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </button>
+        </div>
+        <div class="nav-headlines">
+          <div class="headline-rotator">
+            <div class="headline active" data-headline="1">Premium Fabrics, Exceptional Comfort</div>
+            <div class="headline" data-headline="2">Limited Edition Collections Coming Soon</div>
+            <div class="headline" data-headline="3">Experience Luxury in Every Thread</div>
+            <div class="headline" data-headline="4">Sign Up for Early Access & Offers</div>
+          </div>
         </div>
         <div class="nav-actions">
           <div class="nav-action-wrapper">
@@ -170,7 +178,7 @@ function createFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="nav-logo">Shushco</div>
+          <div class="nav-logo">Shush.co</div>
           <p class="footer-tagline">"Because care speaks softly."</p>
           <div class="footer-social">
             <a href="#" aria-label="Instagram">📷</a>
@@ -180,7 +188,7 @@ function createFooter() {
         <div>
           <h4>Support</h4>
           <div class="footer-links">
-            <a href="mailto:shushco.in05@gmail.com">shushco.in05@gmail.com</a>
+            <a href="mailto:hello@shush.co">hello@shush.co</a>
             <a href="tel:+919136233913">Mob: +91 9136233913</a>
             <a href="contact.html">WhatsApp Us</a>
           </div>
@@ -394,6 +402,34 @@ function initAccordions() {
   });
 }
 
+// ========== HEADLINE ROTATOR ==========
+function initHeadlineRotator() {
+  const rotator = document.querySelector('.headline-rotator');
+  if (!rotator) return;
+  
+  const headlines = rotator.querySelectorAll('.headline');
+  if (headlines.length === 0) return;
+  
+  let currentIndex = 0;
+  
+  function rotateHeadlines() {
+    // Remove active class from all headlines
+    headlines.forEach(headline => headline.classList.remove('active'));
+    
+    // Add active class to current headline
+    headlines[currentIndex].classList.add('active');
+    
+    // Move to next headline
+    currentIndex = (currentIndex + 1) % headlines.length;
+    
+    // Schedule next rotation
+    setTimeout(rotateHeadlines, 3000); // Rotate every 3 seconds
+  }
+  
+  // Start rotation
+  rotateHeadlines();
+}
+
 // ========== GLOBAL INIT ==========
 
 function initGlobal(activePage) {
@@ -410,6 +446,7 @@ function initGlobal(activePage) {
   initTimeAware();
   initScrollReveal();
   initAccordions();
+  initHeadlineRotator();
 }
 
 // Make functions globally available

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shush — Because Care Speaks Softly</title>
-  <meta name="description" content="Shush offers comfort and luxury care kits for cancer patients. Send warmth and love to someone going through treatment.">
+  <title>Shush.co — Premium Fabrics & Luxury Clothing Collections</title>
+  <meta name="description" content="Shush.co offers premium fabric clothing collections crafted with exceptional care. Experience luxury comfort in every thread.">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
@@ -17,11 +17,17 @@
 
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=1440&q=80')"></div>
+      <div class="hero-video-container">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="https://cdn.pixabay.com/video/2023/10/18/183322-877459917_large.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
       <div class="hero-content">
         <h1 id="heroHeading">Because care speaks softly.</h1>
-        <p style="color:#fff; font-size:18px; opacity:0.9; margin-bottom:16px" id="heroSubtext">Comfort kits for the people who matter most.</p>
-        <a href="comfort-kits.html" class="btn btn-primary">Explore Comfort Kits</a>
+        <p style="color:#fff; font-size:18px; opacity:0.9; margin-bottom:16px" id="heroSubtext">Premium fabrics for the people who matter most.</p>
+        <a href="#collections" class="btn btn-primary">Explore Collections</a>
       </div>
     </section>
 
@@ -35,82 +41,64 @@
         <div class="reveal">
           <h2 style="color:var(--color-depth); margin-bottom:16px">What is Shush?</h2>
           <p style="margin-bottom:16px">Shush is not about silence. It's about softening the noise — the fear, the uncertainty, the helplessness — and replacing it with something warm.</p>
-          <p style="margin-bottom:24px">We create comfort kits that say everything you wish you could, packed with intention for someone going through the hardest time of their life.</p>
+          <p style="margin-bottom:24px">We believe comfort is a form of care. So we wrap people in softness when the world feels sharp — clothing designed to hold someone gently through the hardest time of their life.</p>
           <a href="our-story.html" class="btn btn-secondary">The Shush Story</a>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED COMFORT KITS -->
-    <section class="section" style="background:rgba(196,146,138,0.04)">
+    <!-- PREMIUM CLOTH COLLECTIONS -->
+    <section class="section" style="background:rgba(196,146,138,0.04)" id="collections">
       <div class="container">
         <div class="text-center reveal" style="margin-bottom:48px">
-          <h2 style="color:var(--color-depth)">Comfort Kits</h2>
-          <p class="text-muted">Every kit is packed with intention.</p>
+          <h2 style="color:var(--color-depth)">Premium Collections</h2>
+          <p class="text-muted">Exquisite fabrics crafted with care.</p>
         </div>
         <div class="grid grid-3 reveal">
-          <!-- Kit 1 -->
-          <a href="kit.html" class="product-card">
-            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" alt="The Gentle Embrace Kit" class="product-card-img">
-            <div class="product-card-body">
-              <div class="product-card-name">The Gentle Embrace Kit</div>
-              <div class="product-card-tagline">A warm hug in a box.</div>
-              <div class="product-card-price">₹3,499</div>
-              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+          <!-- Collection 1 -->
+          <div class="collection-card">
+            <div class="collection-card-image" style="background: linear-gradient(135deg, #1a1a40 0%, #2c2c54 100%);">
+              <div class="coming-soon-badge">Coming Soon</div>
+              <div class="collection-card-placeholder">🌙</div>
             </div>
-          </a>
-          <!-- Kit 2 -->
-          <a href="kit.html" class="product-card">
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="The Quiet Comfort Kit" class="product-card-img">
-            <div class="product-card-body">
-              <div class="product-card-name">The Quiet Comfort Kit</div>
-              <div class="product-card-tagline">For days that need extra softness.</div>
-              <div class="product-card-price">₹2,499</div>
-              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+            <div class="collection-card-body">
+              <div class="collection-card-name">Midnight Elegance</div>
+              <div class="collection-card-tagline">Luxurious evening wear collection</div>
+              <div class="collection-card-status">Launching Soon</div>
             </div>
-          </a>
-          <!-- Kit 3 -->
-          <a href="kit.html" class="product-card">
-            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=600&q=80" alt="The Strength & Grace Kit" class="product-card-img">
-            <div class="product-card-body">
-              <div class="product-card-name">The Strength & Grace Kit</div>
-              <div class="product-card-tagline">Celebrating courage beautifully.</div>
-              <div class="product-card-price">₹4,999</div>
-              <button class="btn btn-primary btn-sm" style="width:100%">Add to care package</button>
+          </div>
+          <!-- Collection 2 -->
+          <div class="collection-card">
+            <div class="collection-card-image" style="background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);">
+              <div class="coming-soon-badge">Coming Soon</div>
+              <div class="collection-card-placeholder">🌿</div>
             </div>
-          </a>
+            <div class="collection-card-body">
+              <div class="collection-card-name">Forest Serenity</div>
+              <div class="collection-card-tagline">Eco-friendly daily essentials</div>
+              <div class="collection-card-status">Launching Soon</div>
+            </div>
+          </div>
+          <!-- Collection 3 -->
+          <div class="collection-card">
+            <div class="collection-card-image" style="background: linear-gradient(135deg, #6d6875 0%, #b5838d 100%);">
+              <div class="coming-soon-badge">Coming Soon</div>
+              <div class="collection-card-placeholder">✨</div>
+            </div>
+            <div class="collection-card-body">
+              <div class="collection-card-name">Luxe Comfort</div>
+              <div class="collection-card-tagline">Premium loungewear collection</div>
+              <div class="collection-card-status">Launching Soon</div>
+            </div>
+          </div>
         </div>
         <div class="text-center reveal" style="margin-top:32px">
-          <a href="comfort-kits.html" class="btn btn-secondary">View all comfort kits</a>
+          <a href="#newsletter" class="btn btn-secondary">Get Notified at Launch</a>
         </div>
       </div>
     </section>
 
-    <!-- HOW IT REACHES THEM -->
-    <section class="section-lg">
-      <div class="container">
-        <div class="text-center reveal" style="margin-bottom:48px">
-          <h2 style="color:var(--color-depth)">How It Reaches Them</h2>
-        </div>
-        <div class="process-steps reveal">
-          <div class="process-step">
-            <div class="process-step-icon">🎁</div>
-            <h3>Choose</h3>
-            <p>Pick a comfort kit that feels right for their journey.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-step-icon">✍️</div>
-            <h3>Personalize</h3>
-            <p>Add a heartfelt note. You don't need the perfect words.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-step-icon">💛</div>
-            <h3>Deliver</h3>
-            <p>We deliver warmth right to their doorstep, packed with love.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- HOPE WALL PREVIEW -->
     <section class="section" style="background:rgba(168,181,160,0.06)">
@@ -145,7 +133,7 @@
         <p class="text-serif-italic" style="font-size:24px; color:var(--color-depth); max-width:500px; margin:0 auto 24px">
           "Before you go any further — there's something we want to tell the person doing the shopping."
         </p>
-        <a href="for-you.html" class="btn btn-secondary">A note for you, caretaker</a>
+        <a href="for-you.html" class="btn btn-secondary">A note for you — the one behind the care</a>
       </div>
     </section>
 
